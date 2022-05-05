@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: logs-worker
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: logs-worker
+
+  template:
+    metadata:
+      name: logs-worker
+      labels:
+        component: logs-worker
+
+    spec:
+      containers:
+        - name: name
+          image: <IMAGE>
